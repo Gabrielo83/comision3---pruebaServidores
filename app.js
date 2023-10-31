@@ -1,5 +1,4 @@
-import express from "express";
-
+const express = require("express");
 const indexRoutes = require("./src/routes/index.routes");
 const userRoutes = require("./src/routes/users.routes");
 const productsRoutes = require("./src/routes/products.routes");
