@@ -1,7 +1,7 @@
-const routes = require("express").Router();
+import { Router } from "express";
 
-routes.get("/", (req, res) => {
-  res.send("Pagina de INICIO");
+export const indexRoutes = Router();
+
+indexRoutes.get("/", (req, res) => {
+  res.send("Pagina de inicio");
 });
-
-module.exports = routes;

@@ -1,0 +1,27 @@
+### BUSCAR TODOS LOS PRODUCTOS
+GET http://localhost:4000/api/products
+
+### BUSCAR UN PRODUCTO POR SU ID
+GET http://localhost:4000/api/products/65419e95f3a622c57c1b7170
+
+### CREAR UN PRODUCTO
+POST http://localhost:4000/api/products
+Content-Type: application/json
+
+{
+    "name":"Cerveza Stella 1 lt",
+    "category": "Bebidas con alcohol",
+    "price": 2500
+}
+
+### ACTUALIZAR UN PRODUCTO
+PUT  http://localhost:4000/api/products/65419e83f3a622c57c1b716e
+Content-Type: application/json
+
+{
+    "name": "Coca-cola 1.5 lt"
+    
+}
+
+### ELIMINAR UN PRODUCTO
+DELETE  http://localhost:4000/api/products/65419e95f3a622c57c1b7170

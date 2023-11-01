@@ -7,3 +7,13 @@ En el archivo serverNode.js tenemos un servidor con el módulo nativo de Nodejs.
 El proyecto consiste en ir construyendo un servidor con la librería Express.js.
 
 Todo cambio de las clases van a ir reflejandose en este proyecto.
+
+Las variables de entorno estan declaradas en .env.example de la siguiente forma:
+
+```
+PORT=
+
+DB_HOST =""
+
+DB_LOCALHOST=""
+```

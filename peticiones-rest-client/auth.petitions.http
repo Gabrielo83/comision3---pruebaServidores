@@ -1,0 +1,9 @@
+### CREAR EL USUARIO CON EL SIGNUP
+POST http://localhost:4000/api/signup
+Content-Type: application/json
+
+{
+    "username":"Romina",
+    "email":"romina@mail.com",
+    "password":"test1234"
+}

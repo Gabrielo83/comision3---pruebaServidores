@@ -1,7 +1,27 @@
-const routes = require("express").Router();
+import { Router } from "express";
+import {
+  getAllProducts,
+  getProductById,
+  createProduct,
+  updateProduct,
+  deleteProductById,
+} from "../controllers/product.controller.js";
 
-routes.get("/products", (req, res) => {
-  res.send("Pagina de Productos");
-});
+export const productRoutes = Router();
 
-module.exports = routes;
+//RUTA PARA BUSCAR TODOS LOS PRODUCTOS
+productRoutes.get("/products", getAllProducts);
+
+//BUSCAR UN PRODUCTO POR ID
+
+productRoutes.get("/products/:productId", getProductById);
+
+//CREAR UN PRODUCTO
+
+productRoutes.post("/products", createProduct);
+
+//ACTUALIZAR UN PRODUCTO
+productRoutes.put("/products/:productId", updateProduct);
+
+//ELIMINAR UN PRODUCTO
+productRoutes.delete("/products/:productId", deleteProductById);
