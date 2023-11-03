@@ -11,3 +11,7 @@ export const settingDotEnv = () => {
     },
   };
 };
+
+export const settingSecretToken = () => {
+  return { secret: process.env.SECRET };
+};

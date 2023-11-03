@@ -2,11 +2,13 @@ import express from "express";
 import { indexRoutes } from "./src/routes/index.routes.js";
 import { productRoutes } from "./src/routes/products.routes.js";
 import { authRouter } from "./src/routes/auth.routes.js";
+import { createRoles } from "./src/initial.setup.js";
 
 import "./src/database/db.js";
 import { settingDotEnv } from "./src/config.js";
 
 const app = express();
+createRoles();
 
 app.use(express.json());
 app.use("/api/", indexRoutes);

@@ -18,7 +18,7 @@ productRoutes.get("/products/:productId", getProductById);
 
 //CREAR UN PRODUCTO
 
-productRoutes.post("/products", createProduct);
+productRoutes.post("/products/farmacos", createProduct);
 
 //ACTUALIZAR UN PRODUCTO
 productRoutes.put("/products/:productId", updateProduct);
