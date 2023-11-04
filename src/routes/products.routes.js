@@ -6,22 +6,27 @@ import {
   updateProduct,
   deleteProductById,
 } from "../controllers/product.controller.js";
+import { verifyToken, isAdmin } from "../middlewares/auth.jwt.js";
 
 export const productRoutes = Router();
 
 //RUTA PARA BUSCAR TODOS LOS PRODUCTOS
-productRoutes.get("/products", getAllProducts);
+productRoutes.get("/products", verifyToken, getAllProducts);
 
 //BUSCAR UN PRODUCTO POR ID
 
-productRoutes.get("/products/:productId", getProductById);
+productRoutes.get("/products/:productId", verifyToken, getProductById);
 
 //CREAR UN PRODUCTO
 
-productRoutes.post("/products/farmacos", createProduct);
+productRoutes.post("/products/", [verifyToken, isAdmin], createProduct);
 
 //ACTUALIZAR UN PRODUCTO
-productRoutes.put("/products/:productId", updateProduct);
+productRoutes.put("/products/:productId", verifyToken, updateProduct);
 
 //ELIMINAR UN PRODUCTO
-productRoutes.delete("/products/:productId", deleteProductById);
+productRoutes.delete(
+  "/products/:productId",
+  [verifyToken, isAdmin],
+  deleteProductById
+);
